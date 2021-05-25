@@ -12,7 +12,7 @@ module.exports = merge(base, {
     },
     plugins:[
         new HtmlWebpackPlugin({
-            template:path.resolve(__dirname,'../public/index.ssr.html'),
+            template: path.resolve(__dirname,'../public/index.ssr.html'),
             filename: 'server.html',
             excludeChunks:['server'] ,//忽略server
             minify:false//不压缩

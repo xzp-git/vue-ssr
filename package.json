@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "client:dev": "webpack serve --config scripts/webpack.client.js",
-    "client:build": "webpack --config scripts/webpack.client.js",
-    "server:build": "webpack --config scripts/webpack.server.js"
+    "client:build": "webpack --config scripts/webpack.client.js --watch",
+    "server:build": "webpack --config scripts/webpack.server.js --watch",
+    "run:all": "concurrently \"npm run client:build\" \"npm run server:build\""
   },
   "repository": {
     "type": "git",
@@ -20,8 +21,10 @@
   },
   "homepage": "https://github.com/xzp-git/vue-ssr#readme",
   "dependencies": {
+    "concurrently": "^6.2.0",
     "koa": "^2.13.1",
     "koa-router": "^10.0.0",
+    "koa-static": "^5.0.0",
     "vue": "^2.6.12",
     "vue-server-renderer": "^2.6.12",
     "webpack-merge": "^5.7.3"

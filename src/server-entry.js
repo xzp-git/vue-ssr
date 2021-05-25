@@ -9,6 +9,7 @@ import createApp from "./app.js"
 
 export default () => {
     // 此方法实在服务端调用的
+    console.log("ffffffffffffffff");
     let { app } = createApp();
     return app //每次都能产生一个新的应用
 }
