@@ -4,8 +4,9 @@
   "description": "- spa 全部靠js来渲染 默认的首次显示的内容 就是一个空的div标签 - 单页面应用无法实现seo优化，服务端渲染（通过服务端渲染完成后 整个交给客户端 客户端可以直接渲染带有内容的html） - 单页应用过会有首屏白屏时间过长的问题，服务端渲染的好处  访问数据的速度  直接用拼接好的数据返回给前端，首屏白屏会缩短时间。 - 早期服务端渲染， 都是服务端自身的模板引擎来实现的 php jsp - 通过前端框架来实现服务端渲染 vue-> nuxt  / react -> nextjs - 前后端同构",
   "main": "index.js",
   "scripts": {
-    "client:dev": "webpack serve",
-    "client:build": "webpack"
+    "client:dev": "webpack serve --config scripts/webpack.client.js",
+    "client:build": "webpack --config scripts/webpack.client.js",
+    "server:build": "webpack --config scripts/webpack.server.js"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,8 @@
     "koa": "^2.13.1",
     "koa-router": "^10.0.0",
     "vue": "^2.6.12",
-    "vue-server-renderer": "^2.6.12"
+    "vue-server-renderer": "^2.6.12",
+    "webpack-merge": "^5.7.3"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",

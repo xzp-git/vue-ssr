@@ -13,9 +13,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin")
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 module.exports={
     mode:'development',
-    entry:path.resolve(__dirname,'src/main.js'),
     output:{
-        filename:'[name].bundle.js' //默认就是main 默认是dist目录
+        filename:'[name].bundle.js' ,//默认就是main 默认是dist目录
+        path:path.resolve(__dirname,'../dist')
     },
     module:{
         rules:[
@@ -45,9 +45,6 @@ module.exports={
         ]
     },
     plugins:[
-        new HtmlWebpackPlugin({
-            template:path.resolve(__dirname,'public/index.html')
-        }),
         new VueLoaderPlugin()
     ]
 }
