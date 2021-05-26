@@ -15,7 +15,8 @@ module.exports = merge(base, {
             template: path.resolve(__dirname,'../public/index.ssr.html'),
             filename: 'server.html',
             excludeChunks:['server'] ,//忽略server
-            minify:false//不压缩
+            minify:false,//不压缩
+            client:"/client.bundle.js"
         }),
     ]
 })
