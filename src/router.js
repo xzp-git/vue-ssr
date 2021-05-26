@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from "vue-router"
-
+import Foo from "./components/Foo.vue";
 
 // 前端路由 分为两种 hash 和 history
 // 路由根据路径的不同渲染不同的页面，
@@ -11,3 +11,25 @@ import VueRouter from "vue-router"
 
 
 Vue.use(VueRouter)
+
+
+
+// 每个人访问服务器都需要产生一个路由系统
+
+export default () => {
+    let router = new VueRouter({
+        mode:'history',
+        routes:[
+            {
+                path:'/',
+                component: Foo
+            },
+            {
+                path:'/bar',
+                component: () => import("./components/Bar.vue")
+            }//懒加载，根据路径动态加载对应的组件
+        ]
+    })
+    return router;
+}
+
