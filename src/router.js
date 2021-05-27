@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from "vue-router"
 import Foo from "./components/Foo.vue";
+import Bar from "./components/Bar.vue";
 
 // 前端路由 分为两种 hash 和 history
 // 路由根据路径的不同渲染不同的页面，
@@ -26,7 +27,7 @@ export default () => {
             },
             {
                 path:'/bar',
-                component: () => import("./components/Bar.vue")
+                component: Bar
             }//懒加载，根据路径动态加载对应的组件
         ]
     })

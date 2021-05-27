@@ -22,7 +22,6 @@ export default ({url}) => { //服务端调用方法时会传入url属性
 
     return new Promise((resolve, reject) => {
         let { app, router } = createApp();
-        console.log(url);
         router.push(url)
         router.onReady(() => { //等待路由跳转完毕组件 已经准备好了触发
             const matchComponents = router.getMatchedComponents()
