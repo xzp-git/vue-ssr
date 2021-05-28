@@ -18,13 +18,17 @@ const createStore = () => {
             changeName({commit}){
                 return new Promise((resolve, reject) => {
                     setTimeout(() => {
-                        commit('changeName','jiangwen')
+                        commit('changeName','xzp')
                         resolve()
                     },1000)
                 })
             }
         }
     })
+    if(typeof window != 'undefined' && window.__INITIAL_STATE__){
+        // 浏览器开始渲染了
+        store.replaceState(window.__INITIAL_STATE__) //用服务端加载好的数据去替换客户端的数据
+    }
     return store
 }
 Vue.use(Vuex)
