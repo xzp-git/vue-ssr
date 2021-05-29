@@ -41,7 +41,7 @@ export default (conntext) => { //服务端调用方法时会传入url属性
                 })).then(()=>{
                     // 默认在window下生成一个变量
                     conntext.state = store.state //服务器执行完毕后，最新的状态保存在store
-                    resolve(app)
+                    resolve(app)//app是已经获取到数据的实例
                 }) 
                 
             }
